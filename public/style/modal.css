@@ -4,8 +4,8 @@
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
-    /* padding-top: 150px;  */
+    z-index: 1000; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -41,7 +41,7 @@
     left: 50%;
     color: white;
     background-color: #CAE5FF;
-    z-index: 2;
+    z-index: 1002;
 }
 
 #banner-container h2{

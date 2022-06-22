@@ -7,7 +7,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    /* background-color: rgb(215, 215, 244); */
+    background-color: rgb(215, 215, 244);
 }
 
 .logo {
@@ -20,6 +20,7 @@ header {
     width: 80%;
     color: white;
     display: flex;
+    overflow: hidden;
 }
 
 .signInUp {
@@ -87,7 +88,7 @@ header {
 .dropdown:hover .dropbtn {
     background-color:aliceblue;
     /* background-color: #E43F6F; */
-    background-color: rgba(219, 9, 170, 0.1);
+    background-color: rgba(219, 9, 170, 0.9);
 }
 
 .dropdown-content2 a:hover {
@@ -113,7 +114,7 @@ header {
 
 .dropdown3:hover .dropbtn3 {
     /* background-color:aliceblue; */
-    background-color: rgba(219, 9, 170, 0.6);
+    background-color: rgba(219, 9, 170, 0.9);
 }
 
 .dropdown-content4 a:hover {
@@ -126,7 +127,7 @@ header {
 
 .dropdown4:hover .dropbtn4 {
     /* background-color:aliceblue; */
-    background-color: rgba(9, 58, 219, 0.2);
+    background-color: rgba(219, 9, 170, 0.9);
 
 }
 
@@ -137,7 +138,7 @@ header {
 #searchBarContainer {
     display: flex;
     height:50%;
-    width: 60%;
+    width: 70%;
     /* padding: 10px 35px 10px 15px; */
     border-radius: 100px;
     background-color: white;
@@ -197,5 +198,6 @@ input[type='search'] {
 
 .filter
 {
-    width: 50px;
+    width: 130px;
+    border: 1px; 
 }

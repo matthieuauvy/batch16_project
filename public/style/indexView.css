@@ -31,7 +31,7 @@
 #slide1
 {
     background-image: url("https://www.singaporetravellers.info/wp-content/uploads/2018/08/seoul.jpg");
-    animation: shrink 10s infinite alternate;  
+    animation: shrink 20s infinite alternate;  
 }
 
 @keyframes shrink {
@@ -64,8 +64,10 @@
     100% { right: 0; }
 }
 
-
+#modalBox {
+    z-index: 1000;
+}
   
  
-  
+
   

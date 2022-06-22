@@ -20,7 +20,7 @@ class UserManager extends Manager
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
 
-        $response = $this->_connection->query("SELECT email, password, dob, first_name FROM users WHERE email = '$email'");
+        $response = $this->_connection->query("SELECT email, password, dob, first_name, id, uid FROM users WHERE email = '$email'");
         $userInfo = $response->fetch(\PDO::FETCH_ASSOC);
         $passwordHashed = $userInfo['password'];
         $response->closeCursor();
@@ -31,6 +31,7 @@ class UserManager extends Manager
             session_start();
             $_SESSION['firstName'] = $userInfo['first_name'];
             $_SESSION['email'] = $email;
+            $_SESSION['uid'] = $userInfo['uid'];
 
             if ($userInfo['dob']) {
                 header("Location:index.php");
@@ -235,7 +236,7 @@ class UserManager extends Manager
     // getUserInfo to display on viewProfile page
     public function getUserInfo()
     {
-        $req = $this->_connection->prepare('SELECT * FROM users WHERE id = ?');
+        $req = $this->_connection->prepare('SELECT * FROM users WHERE uid = ?');
         $req->execute(array($this->_user_id));
         $user = $req->fetch(\PDO::FETCH_ASSOC);
         $req->closeCursor();

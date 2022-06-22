@@ -22,5 +22,7 @@
     <?php require "header.php"; ?>
     <?=$content;?>
     <?php require "footer.php"; ?>
+<script src="./public/js/modal.js"></script> 
+
 </body>
 </html> 

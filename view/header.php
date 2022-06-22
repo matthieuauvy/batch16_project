@@ -4,7 +4,7 @@
     <div class="headerContainer"> 
         <div class="logo">
             <a href="index.php">
-            <img src="public/images/output-onlinepngtools.png" alt="logo" width="100px" height="100px">
+                <img src="public/images/output-onlinepngtools.png" alt="logo" width="100px" height="100px">
             </a>
         </div>
         <nav class="nav">
@@ -35,7 +35,7 @@
             </div>
 
             <div id="searchBarContainer">
-                <input type="search" name="searchbar" id="searchBar" placeholder="Type a City or Province to get started !" value = "<?php if (isset($_REQUEST['search']) && $_REQUEST['search'] != "any") { echo $_REQUEST['search']; } ?>"> 
+                <input type="search" name="searchbar" id="searchBar" placeholder="Type a City or Province to get started!" value = "<?php if (isset($_REQUEST['search']) && $_REQUEST['search'] != "any") { echo $_REQUEST['search']; } ?>"> 
                 <select name="rentRange" id="rentRange" class="filter">
                     <option value="any">Price Range :</option>
                     <option value="500000">Less than 500k/month</option>
@@ -64,23 +64,41 @@
         <div class="signInUp">
             <!-- Changing interface once signed in/signed out -->
             <div class="dropdown4">
-                <button class="dropbtn4"><a href=""><img src="public/images/defaultProfileImage.jpeg" alt="defaultPic" width="40px" height="40x"></a></button>
+                <button class="dropbtn4"><a href=""><img src="public/images/defaultProfile.jpg" alt="defaultPic" width="40px" height="40x"></a></button>
                 <div class="dropdown-content4">
                     <?php echo (!empty($_SESSION['firstName'])) ? '<button id="settingsButton"><a href="#">Settings</a></button>' : '<button id="signUpButton"><a href="#">Register</a></button>'; ?>
                     <?php echo (!empty($_SESSION['firstName'])) ? '<button id="signOutButton"><a href="index.php?action=signOut">Sign Out</a></button>' : '<button id="signInButton"><a href="#">Sign In</a></button>'; ?>
                     
                     <?php 
                         if (!empty($_SESSION['firstName'])){
-                            echo '<a href="index.php?action=profile&user=2">View My Profile</a>';
+                            echo '<a href="index.php?action=profile&user='.$_SESSION['uid'].'">View My Profile</a>';
                             // <-- TODO: change to action for specific user -->
-                            echo '<a href="index.php?action=modifyProfile">Edit My Profile</a>';
-                            
+                            echo '<a href="index.php?action=modifyProfile&user='.$_SESSION['uid'].'">Edit My Profile</a>';                        
                         }
                     ?>                    
                 </div>
             </div>
         </div>
     </div>
+      <!-- Modal section -->
+<?php if (empty($_SESSION['email'])) {?>
+  <div id="modalBox" class="modal">
+    
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id="banner-container"></div>
+      <span class="close">&times;</span>
+      <div class="form-container">
+        <div id="signIn-container">
+          <?php include('view/signInView.php');?>
+        </div>
+        <div id="signUp-container">
+          <?php include('view/signUpView.php');?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php } ?>
 </header>
 
 

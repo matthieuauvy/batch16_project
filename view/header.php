@@ -71,7 +71,7 @@
                     
                     <?php 
                         if (!empty($_SESSION['firstName'])){
-                            echo '<img src="' . $_SESSION['profile_img']. '" width="500" height="400">';
+                            // echo '<img src="' . $_SESSION['profile_img']. '" width="500px" height="400px">';
                             echo '<a href="index.php?action=profile&user='.$_SESSION['uid'].'">View My Profile</a>';
                             echo '<a href="index.php?action=modifyProfile">Edit My Profile</a>';                        
                         }
@@ -100,6 +100,8 @@
   </div>
 <?php } ?>
 </header>
+
+<div class="headerBackgroundColor"></div>
 
 
 

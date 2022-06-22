@@ -21,10 +21,11 @@
     padding: 10px 0;
     border-bottom: 1px solid grey;
     margin: 20px;
-    width: 80%;
+    width: 800px;
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #propertiesSearchList #propertyDetails {

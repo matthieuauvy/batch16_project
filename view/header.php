@@ -6,7 +6,7 @@
             <a href="index.php">
                 <img src="public/images/output-onlinepngtools.png" alt="logo" width="100px" height="100px">
             </a>
-        </div>
+        </div>`
         <nav class="nav">
             <div class="dropdown2">
                 <button class="dropbtn2">Browse</button>
@@ -35,7 +35,7 @@
             </div>
 
             <div id="searchBarContainer">
-                <input type="search" name="searchbar" id="searchBar" placeholder="Type a City or Province to get started!" value = "<?php if (isset($_REQUEST['search']) && $_REQUEST['search'] != "any") { echo $_REQUEST['search']; } ?>"> 
+                <input type="search" name="searchbar" id="searchBar" placeholder="Type a City or Province to get started !" value = "<?php if (isset($_REQUEST['search']) && $_REQUEST['search'] != "anywhere") { echo $_REQUEST['search']; } ?>"> 
                 <select name="rentRange" id="rentRange" class="filter">
                     <option value="any">Price Range :</option>
                     <option value="500000">Less than 500k/month</option>
@@ -72,8 +72,8 @@
                     <?php 
                         if (!empty($_SESSION['firstName'])){
                             echo '<a href="index.php?action=profile&user='.$_SESSION['uid'].'">View My Profile</a>';
-                            // <-- TODO: change to action for specific user -->
-                            echo '<a href="index.php?action=modifyProfile&user='.$_SESSION['uid'].'">Edit My Profile</a>';                        
+                            echo '<a href="index.php?action=modifyProfile">Edit My Profile</a>';
+                            
                         }
                     ?>                    
                 </div>

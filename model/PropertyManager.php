@@ -20,8 +20,8 @@ class PropertyManager extends Manager {
             ON p.room_type_id = rt.id
             LEFT JOIN property_imgs pi
             ON p.id = pi.property_id
-            WHERE p.is_active = 1 AND user_uid = :uid");
-            $req->bindParam('uid', $this->_user_id);
+            WHERE p.is_active = 1 AND p.user_uid = :uid");
+            $req->bindParam('uid', $_REQUEST['user']);
             $req->execute();
         
         } else {
@@ -66,7 +66,7 @@ class PropertyManager extends Manager {
 
     public function searchProperties($search, $rangeMin, $rangeMax, $propertyType, $roomType) {
 
-        $search = ($search == "any") ? "%%" : $search; //// If search input is empty, show all results ("%%" is regex that catches any string)
+        $search = ($search == "anywhere") ? "%%" : $search; //// If search input is empty, show all results ("%%" is regex that catches any string)
         $rangeMin = ($rangeMin == "any") ? 0 : $rangeMin;
         $rangeMax = ($rangeMax == "any") ? 1000000000 : $rangeMax; /// default number large enough to catch all properties
         $propertyType = ($propertyType == "any") ? "%%" : $propertyType;

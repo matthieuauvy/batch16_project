@@ -9,8 +9,8 @@
         else?></p>
     <div class='propertyImgContainer propImages'>
         <img alt="property main image" src="<?= $propDetails['p_img'];?>">
-        <button class='allPropPhotos'><a href="">See all photos <i class="fa-solid fa-images"></i></a>
-            </button>
+        <button class='allPropPhotos'><a href="">See all photos <i class="fa-solid fa-images"></i></a></button>
+        <!-- TODO: click for modal with slide gallery for showing all property photos -->
     </div>
     <div class='propDetails'>
         <div class='propDesc'>
@@ -23,6 +23,7 @@
             <p class='price'>Price: <span><?= number_format($propDetails['monthly_price_won']);?></span>₩/month</p>
             <p>Owner information:</p>
             <button class='resvbutton'><a href="">Reserve now</a></button>
+            <!-- TODO: reservation action -->
         </div>
     </div>
 

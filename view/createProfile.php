@@ -18,7 +18,7 @@
             <div id="createProfileDetails">
                 <div>
                     <label for="phoneNum">Phone Number:</label>
-                    <input type="text" id="phoneNum" name="phoneNum" placeholder="ex) +8201031837065">
+                    <input type="text" id="phoneNum" name="phoneNum">
                 </div>
                 <div>
                     <label for="birthdate">Birthdate:</label>

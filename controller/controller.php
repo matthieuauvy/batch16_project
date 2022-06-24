@@ -17,10 +17,10 @@ function checkSignIn($params){
     $signIn->checkSignIn($params['email'], $params['password']);
 }
 
-// function verifyEmail($params){
-//     $email = new UserManager();
-//     $email->verifyEmail($params['email']);
-// }
+function verifyEmail($params){
+    $email = new UserManager();
+    $email->verifyEmail($params['email']);
+}
 
 function signOut(){
     $signOut = new UserManager();
@@ -55,10 +55,10 @@ function listProperties() {
     return $properties;
 }
 
-function getLanding() {
-    // $properties = listProperties();
-    // $userM = new UserManager(); 
-    // $data = $userM->viewUserData();`
+function getLanding($userId) {
+    $properties = listProperties();
+    $userM = new UserManager($userId); 
+    $data = $userM->viewUserData();
     require('./view/indexView.php');
 }
 
